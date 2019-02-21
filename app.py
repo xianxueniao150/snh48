@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-
-
+from flask_migrate import Migrate
+from flask_sslify import SSLify
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:zbw1056512354@localhost/micmovie'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =  False
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+sslify = SSLify(app)
 
 @app.route('/')
 def hello_world():
