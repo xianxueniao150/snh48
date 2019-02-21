@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+    <div class="col-md-8 ">
+        <form action="{{ url_for('snh') }}" class="form-horizontal" method="post" role="form">
+            <fieldset  >
+                <legend>后花园按日期查询帖子</legend>
+                <div class="form-group" style="float: left;width: 90%;">
+                    <label for="dtp_input1" class="col-md-2 control-label">选择日期</label>
+                    <div class="input-group date form_date col-md-5"  data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
+                        <input class="form-control" size="16" type="text" value="2016-12-31" name="date">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span><br>
+                    </div>
+                    <input type="hidden" id="dtp_input1" value="" /><br/>
+                </div>
+                <input type="submit" value="提交 " class="btn btn-primary" style="float:right;margin-left: -230px;">
+            </fieldset>
+
+        </form>
+    </div>
+    </div>
+    <div class="row" style="padding-left: 60px;">
+{#        <div class="col-md-1"></div>#}
+        <div class="col-md-9" >
+            {% for post in posts %}
+                <div class="panel panel-default">
+                  <div class="panel-heading"><a href="{{ post.post_url }}">{{ post.title }}</a></div>
+                  <div class="panel-body">
+                    {{ post.time }}
+                {{ post.creater }}
+                {{ post.reply_num }}
+                      <br>
+                {{ post.post_lz|truncate(200,true) }}
+                  </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-2" style="padding-left: 50px;margin-bottom: 30px">
+            <a href="https://www.bilibili.com/video/av39440174/?p=7" target="_blank">
+                <img src="{{url_for('static', filename='pics/2019022118544293.GIF') }}" alt="">
+            </a>
+        </div>
+        <div class="col-md-2" style="padding-left: 50px">
+            <a href="https://www.bilibili.com/video/av23042384/?p=9" target="_blank">
+                <img src="{{url_for('static', filename='pics/2019022119074998.GIF') }}" alt="">
+            </a>
+        </div>
+
+    </div>
+    <div>
+        <table class="table table-hover">
+
+        </table>
+    </div>
+
+
+
+
+
+{% endblock %}
+{% block script %}
+    {% include "snh/cxcalendar.html" %}
+{% endblock %}
