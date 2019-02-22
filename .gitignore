@@ -1,5 +1,7 @@
 *.pyc
 *~
+.env
 __pyache__
 .DS_Store
+.flaskenv
 

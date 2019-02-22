@@ -3,13 +3,13 @@
 {% block content %}
     <div class="container">
     <div class="col-md-8 ">
-        <form action="{{ url_for('snh') }}" class="form-horizontal" method="post" role="form">
+        <form action="{{ url_for('snh') }}" class="form-horizontal"  role="form" id="form">
             <fieldset  >
                 <legend>后花园按日期查询帖子</legend>
                 <div class="form-group" style="float: left;width: 90%;">
                     <label for="dtp_input1" class="col-md-2 control-label">选择日期</label>
                     <div class="input-group date form_date col-md-5"  data-date-format="yyyy-mm-dd" data-link-field="dtp_input1">
-                        <input class="form-control" size="16" type="text" value="2016-12-31" name="date">
+                        <input class="form-control" size="16" type="text" value="{{ date }}" name="date" id="date">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span><br>
                     </div>

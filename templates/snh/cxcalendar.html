@@ -15,6 +15,11 @@
 		forceParse: 0
     });
 
+    	$('#form').submit(function () {
+        $('#date').val(function () {
+          return $('#dtp_input1').val().substr(0,10)
+        })
+    })
 </script>
 
 
