@@ -1,0 +1,23 @@
+body {
+  background: #454545;
+}
+
+a {
+  display: block;
+  padding: 150px;
+  color: #999999;
+  -webkit-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+
+}
+
+a:hover {
+  color: #eee;
+  text-decoration: none;
+}
+
+.more_function {
+  padding-left: 150px;
+  color: #999999;
+}

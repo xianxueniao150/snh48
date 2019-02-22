@@ -27,10 +27,9 @@
             {% for post in posts %}
                 <div class="panel panel-default">
                   <div class="panel-heading"><a href="{{ post.post_url }}">{{ post.title }}</a></div>
-                  <div class="panel-body">
-                    {{ post.time }}
-                {{ post.creater }}
-                {{ post.reply_num }}
+                  <div class="panel-body ">
+                      <div class="status">发帖时间：{{ post.time }} |
+                楼主： {{ post.creater }}  | 回复数量：{{ post.reply_num }}</div>
                       <br>
                 {{ post.post_lz|truncate(200,true) }}
                   </div>
@@ -38,14 +37,19 @@
             {% endfor %}
         </div>
         <div class="col-md-2" >
-            <div style="padding-left: 50px;margin-bottom: 30px">
+            <div class="presnet">
                 <a href="https://www.bilibili.com/video/av39440174/?p=7" target="_blank">
-                    <img src="{{url_for('static', filename='pics/2019022118544293.GIF') }}" alt="">
+                    <img src="{{url_for('static', filename='pics/2019022214265947.GIF') }}" alt="">
                 </a>
             </div>
-            <div class="col-md-2" style="padding-left: 50px">
+            <div class="presnet">
             <a href="https://www.bilibili.com/video/av23042384/?p=9" target="_blank">
-                <img src="{{url_for('static', filename='pics/2019022119074998.GIF') }}" alt="">
+                <img src="{{url_for('static', filename='pics/2019022214220990.GIF') }}" alt="">
+            </a>
+            </div>
+            <div class="presnet">
+            <a href="https://www.bilibili.com/video/av24283681/?p=9" target="_blank">
+                <img src="{{url_for('static', filename='pics/2019022215381024.GIF') }}" alt="">
             </a>
             </div>
         </div>
